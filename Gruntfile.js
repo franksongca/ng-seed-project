@@ -104,7 +104,7 @@ module.exports = function (grunt) {
             with_overrides: {
                 options: {
                     curly: false,
-                    undef: true,
+                    undef: true
                 },
                 files: {
                     src: [
@@ -268,5 +268,5 @@ module.exports = function (grunt) {
     //grunt.registerTask('prodserve', ['shell:prodserve']);
 
 
-    grunt.registerTask('dist', ['clean', 'copy', 'uglify', 'cssmin', 'processhtml', 'compress']);
+    grunt.registerTask('dist', ['karma', 'clean', 'copy', 'uglify', 'cssmin', 'processhtml']);
 };
