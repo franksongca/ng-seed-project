@@ -47,19 +47,19 @@ module.exports = function (grunt) {
             task: {
                 // Point to the files that should be updated when
                 // you run `grunt wiredep`
-                src: ['client/index.html']
+                src: ['ngseed/index.html']
             }
         },
         less: {
             options: {
                 paths: [
-                    'client/bower_components',
-                    'client/app'
+                    'ngseed/bower_components',
+                    'ngseed/app'
                 ]
             },
             server: {
                 files: {
-                    'client/app/app.css': 'client/app/app.less'
+                    'ngseed/app/app.css': 'ngseed/app/app.less'
                 }
             }
         },
@@ -108,9 +108,9 @@ module.exports = function (grunt) {
                 },
                 files: {
                     src: [
-                        'client/**/*.js',
-                        '!client/bower_components/**/*.js',
-                        '!client/**/*.spec.js'
+                        'ngseed/**/*.js',
+                        '!ngseed/bower_components/**/*.js',
+                        '!ngseed/**/*.spec.js'
                     ]
                 }
             }
@@ -123,31 +123,31 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    'dist/index.html': ['client/index.html']
+                    'dist/index.html': ['ngseed/index.html']
                 }
             }
         },
         copy: {
             app: {
-                src: 'client/app/app.js',
+                src: 'ngseed/app/script/app.js',
                 dest: 'dist/js/app.js'
             },
             templates: {
                 src: ['**/*'],
                 dest: 'dist/templates/',
-                cwd: 'client/templates',
+                cwd: 'ngseed/templates',
                 expand: true
             },
             assets: {
                 src: ['**/*'],
                 dest: 'dist/assets/',
-                cwd: 'client/assets',
+                cwd: 'ngseed/assets',
                 expand: true
             },
             fontawesome: {
                 src: ['font-awesome.min.css'],
                 dest: 'dist/css',
-                cwd: 'client/bower_components/font-awesome/css',
+                cwd: 'ngseed/bower_components/font-awesome/css',
                 expand: true
             }
         },
@@ -171,7 +171,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'dist/js/lib/angular.min.js': [
-                        'client/bower_components/angular/angular.js'
+                        'ngseed/bower_components/angular/angular.js'
                     ]
                 }
             },
@@ -182,23 +182,23 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'dist/js/lib/libs.min.js': [
-                        'client/bower_components/angular-ui-router/release/angular-ui-router.js',
-                        'client/bower_components/angular-resource/angular-resource.js',
-                        'client/bower_components/angular-cookies/angular-cookies.js',
-                        'client/bower_components/slick-carousel/slick/slick.js',
-                        'client/bower_components/angular-slick/dist/slick.js',
-                        'client/bower_components/angular-translate/angular-translate.js',
-                        'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-                        'client/bower_components/lodash/lodash.js',
-                        'client/bower_components/moment/moment.js',
-                        'client/bower_components/angular-elastic/elastic.js',
-                        'client/bower_components/angular-sanitize/angular-sanitize.js',
-                        'client/bower_components/angular-file-upload/angular-file-upload.js',
-                        'client/bower_components/angularjs-modal-service/src/createDialog.js',
-                        'client/bower_components/bootstrap/dist/js/bootstrap.js',
-                        'client/bower_components/angular-facebook/lib/angular-facebook.js',
-                        'client/bower_components/twitter-text/js/twitter-text.js',
-                        'client/bower_components/angular-mocks/angular-mocks.js'
+                        'ngseed/bower_components/angular-ui-router/release/angular-ui-router.js',
+                        'ngseed/bower_components/angular-resource/angular-resource.js',
+                        'ngseed/bower_components/angular-cookies/angular-cookies.js',
+                        'ngseed/bower_components/slick-carousel/slick/slick.js',
+                        'ngseed/bower_components/angular-slick/dist/slick.js',
+                        'ngseed/bower_components/angular-translate/angular-translate.js',
+                        'ngseed/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+                        'ngseed/bower_components/lodash/lodash.js',
+                        'ngseed/bower_components/moment/moment.js',
+                        'ngseed/bower_components/angular-elastic/elastic.js',
+                        'ngseed/bower_components/angular-sanitize/angular-sanitize.js',
+                        'ngseed/bower_components/angular-file-upload/angular-file-upload.js',
+                        'ngseed/bower_components/angularjs-modal-service/src/createDialog.js',
+                        'ngseed/bower_components/bootstrap/dist/js/bootstrap.js',
+                        'ngseed/bower_components/angular-facebook/lib/angular-facebook.js',
+                        'ngseed/bower_components/twitter-text/js/twitter-text.js',
+                        'ngseed/bower_components/angular-mocks/angular-mocks.js'
                     ]
                 }
             },
@@ -209,10 +209,10 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'dist/js/ngseed.min.js': [
-                        'client/app/**/*.js',
-                        '!client/app/app.js',
-                        '!client/app/**/*.spec.js',
-                        '!client/app/main/home/home.js'
+                        'ngseed/app/**/*.js',
+                        '!ngseed/app/app.js',
+                        '!ngseed/app/**/*.spec.js',
+                        '!ngseed/app/main/home/home.js'
                     ]
                 }
             }
@@ -224,10 +224,10 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'dist/css/style.css': ['client/app/skSpinner.css', 'client/app/style-import.css', 'client/app/style.css', 'client/app/home.css', 'client/app/mobile.css', 'client/app/tablet.css', 'client/app/large.css', 'client/app/iestyle.css'],
+                    'dist/css/style.css': ['ngseed/app/styles/skSpinner.css', 'ngseed/app/styles/style.css'],
                     'dist/css/vendor.css': [
-                        'client/bower_components/slick-carousel/slick/slick.css',
-                        'client/bower_components/bootstrap/dist/css/bootstrap.css'
+                        'ngseed/bower_components/slick-carousel/slick/slick.css',
+                        'ngseed/bower_components/bootstrap/dist/css/bootstrap.css'
                     ]
                 }
             }
